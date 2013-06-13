@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <title>Upload</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script>
+	function processForm() {
+		alert('boo')
+	}
+	</script>
+    </head>
+    <body>
+	<form action="../doFat"
+	enctype="multipart/form-data" method="post" id="send-picture" onSubmit="processForm()">
+	<input type="file" name="datafile" size="40">
+	<div>
+	<input type="submit" value="Save">
+	</div>
+	</form>
+    </body>
+</html>
