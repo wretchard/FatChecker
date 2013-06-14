@@ -6,16 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="common.css">
 	<script>
 	function processForm() {
-		alert('boo')
+	//var fullPath = document.getElementById('upload').value; 
+	//if (fullPath) {alert(fullPath); }
+	//document.getElementById("frame1-frame").style.display = 'none';
+	parent.$$('container_upload').toggle();
 	}
 	</script>
     </head>
     <body>
 	<form action="../doFat"
 	enctype="multipart/form-data" method="post" id="send-picture" onSubmit="processForm()">
-	<input type="file" name="datafile" size="40">
 	<div>
-	<input type="submit" value="Save">
+	<input type="file" name="datafile" size="40" ID="upload">
+	</div>
+	<div>
+	<input type="submit" value="Save" class="buttonstandard">
 	</div>
 	</form>
     </body>

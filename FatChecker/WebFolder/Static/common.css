@@ -1,5 +1,5 @@
 ﻿body {
-{font-family:'Droid Sans', sans-serif; color:rgb(114, 114, 114); font-size:80%}
+	//background-color:#6D85A3
 }
 
 p {font-family:'Droid Sans', sans-serif; color:rgb(114, 114, 114); font-size:80%}
@@ -9,3 +9,9 @@ li {font-family:'Droid Sans', sans-serif; color:rgb(114, 114, 114)}
 h1 {font-family:'Droid Sans', sans-serif; color:rgb(114, 114, 114)}
 
 h2 {font-family:'Droid Sans', sans-serif; color:rgb(114, 114, 114)}
+
+.buttonstandard {
+width:85px;
+height:23px;
+	
+}
