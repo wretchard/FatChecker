@@ -2,11 +2,17 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var buttonCustomer = {};	// @button
 	var button_upload = {};	// @button
 	var button_show = {};	// @button
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	buttonCustomer.click = function buttonCustomer_click (event)// @startlock
+	{// @endlock
+		$$('navigationView1').goToView(2);
+	};// @lock
 
 	button_upload.click = function button_upload_click (event)// @startlock
 	{// @endlock
@@ -19,6 +25,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("buttonCustomer", "click", buttonCustomer.click, "WAF");
 	WAF.addListener("button_upload", "click", button_upload.click, "WAF");
 	WAF.addListener("button_show", "click", button_show.click, "WAF");
 // @endregion

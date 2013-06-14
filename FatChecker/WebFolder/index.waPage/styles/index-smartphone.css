@@ -3,6 +3,138 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#login1 {
+	 width: 202px;
+	 height: 31px;
+	 top: 7px;
+	 left: 105px;
+	
+	 position: absolute;
+	 
+}
+
+#textField3 {
+	 width: 170px;
+	 height: 40px;
+	 top: 140px;
+	 left: 95px;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 
+}
+
+#label3 {
+	 width: 75px;
+	 height: 15px;
+	 top: 152.5px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 
+}
+
+#textField2 {
+	 width: 170px;
+	 height: 40px;
+	 top: 80px;
+	 left: 95px;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 
+}
+
+#label2 {
+	 width: 75px;
+	 height: 15px;
+	 top: 92.5px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 
+}
+
+#textField1 {
+	 width: 170px;
+	 height: 40px;
+	 top: 20px;
+	 left: 95px;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 
+}
+
+#label1 {
+	 width: 75px;
+	 height: 15px;
+	 top: 32.5px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 
+}
+
+#container1 {
+	 width: 318px;
+	 height: 250px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#body2 {
+	 top: 44px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#backButton2 {
+	 width: 50px;
+	 height: 29px;
+	 top: 7px;
+	 left: 20px;
+	
+	 position: absolute;
+	 
+}
+
+#header2 {
+	 height: 44px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#view2 {
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #frame1 {
 	 top: 0px;
 	 bottom: 0px;
@@ -116,18 +248,18 @@
 	 right: 0px;
 	
 	 position: absolute;
+	 background-color: rgba(0, 0, 0, 0);
 	 border-top-width: 0px;
 	 border-left-width: 0px;
 	 border-right-width: 0px;
 	 border-bottom-width: 0px;
-	 background-color: rgba(0, 0, 0, 0);
 	 
 }
 
 #button_upload {
 	 width: 92px;
 	 height: 29px;
-	 top: 8px;
+	 top: 345px;
 	 left: 2px;
 	
 	 position: absolute;
@@ -137,8 +269,8 @@
 #button_show {
 	 width: 90px;
 	 height: 29px;
-	 top: 8px;
-	 left: 100px;
+	 top: 345px;
+	 left: 104px;
 	
 	 position: absolute;
 	 
@@ -147,8 +279,8 @@
 #container_upload {
 	 width: 240px;
 	 height: 63px;
-	 top: 310px;
-	 left: 43px;
+	 top: 272px;
+	 left: 5px;
 	
 	 position: absolute;
 	 border-top-color: rgb(0, 0, 0);
@@ -177,10 +309,34 @@
 	
 	 position: absolute;
 	 background-color: rgb(255, 255, 255);
-	 border-top-width: 0px;
-	 border-left-width: 0px;
-	 border-right-width: 0px;
-	 border-bottom-width: 0px;
+	 border-top-style: solid;
+	 border-top-width: 1px;
+	 border-left-style: solid;
+	 border-left-width: 1px;
+	 border-right-style: solid;
+	 border-right-width: 1px;
+	 border-bottom-style: solid;
+	 border-bottom-width: 1px;
+	 
+}
+
+#Custdetails {
+	 top: 0px;
+	 bottom: -1px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#buttonCustomer {
+	 width: 92px;
+	 height: 29px;
+	 top: 8px;
+	 left: 3px;
+	
+	 position: absolute;
 	 
 }
 
