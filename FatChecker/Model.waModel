@@ -13,33 +13,33 @@
 				"panelColor": "#D88CFF",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 48,
 						"Y": 26
-					},
-					"pathVisible": true
+					}
 				}
 			},
 			"Customer": {
 				"panelColor": "#4FA997",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 378,
 						"Y": 23
-					},
-					"pathVisible": true
+					}
 				}
 			},
 			"CustomerPicture": {
 				"panelColor": "#548DD4",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 41,
 						"Y": 318
-					},
-					"pathVisible": true
+					}
 				}
 			}
 		},
@@ -50,153 +50,159 @@
 	},
 	"dataClasses": [
 		{
-			"collectionName": "CustomerAnthroCollection",
-			"className": "CustomerAnthro",
-			"attributes": [
-				{
-					"name": "ID",
-					"scope": "public",
-					"type": "uuid",
-					"kind": "storage",
-					"autogenerate": true,
-					"identifying": false,
-					"primKey": "true",
-					"unique": "true"
-				},
-				{
-					"name": "frontWaist",
-					"scope": "public",
-					"type": "number",
-					"kind": "storage"
-				},
-				{
-					"name": "backWaist",
-					"scope": "public",
-					"type": "number",
-					"kind": "storage"
-				},
-				{
-					"name": "sideWaist",
-					"scope": "public",
-					"type": "number",
-					"kind": "storage"
-				},
-				{
-					"name": "waistCircumference",
-					"scope": "public",
-					"type": "number",
-					"kind": "storage"
-				},
-				{
-					"name": "dateMeasured",
-					"scope": "public",
-					"type": "date",
-					"kind": "storage"
-				},
-				{
-					"name": "customer",
-					"scope": "public",
-					"path": "Customer",
-					"type": "Customer",
-					"kind": "relatedEntity"
-				}
-			]
-		},
-		{
-			"collectionName": "CustomerCollection",
+			"name": "Customer",
 			"className": "Customer",
+			"collectionName": "CustomerCollection",
+			"scope": "public",
 			"attributes": [
 				{
 					"name": "ID",
-					"scope": "public",
-					"type": "uuid",
 					"kind": "storage",
+					"scope": "public",
+					"unique": true,
 					"autogenerate": true,
-					"primKey": "true",
-					"unique": "true"
+					"type": "uuid",
+					"primKey": true
 				},
 				{
 					"name": "FirstName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"kind": "storage"
+					"type": "string"
 				},
 				{
 					"name": "LastName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"kind": "storage"
+					"type": "string"
 				},
 				{
 					"name": "MiddleName",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"kind": "storage"
+					"type": "string"
 				},
 				{
 					"name": "customerAnthroCollection",
+					"kind": "relatedEntities",
 					"scope": "public",
-					"reversePath": true,
-					"path": "customer",
 					"type": "CustomerAnthroCollection",
-					"kind": "relatedEntities"
+					"reversePath": true,
+					"path": "customer"
 				},
 				{
 					"name": "customerPictureCollection",
+					"kind": "relatedEntities",
 					"scope": "public",
-					"reversePath": true,
-					"path": "customer",
 					"type": "CustomerPictureCollection",
-					"kind": "relatedEntities"
+					"reversePath": true,
+					"path": "customer"
 				}
 			]
 		},
 		{
-			"collectionName": "CustomerPictureCollection",
-			"className": "CustomerPicture",
+			"name": "CustomerAnthro",
+			"className": "CustomerAnthro",
+			"collectionName": "CustomerAnthroCollection",
+			"scope": "public",
 			"attributes": [
 				{
 					"name": "ID",
-					"scope": "public",
-					"type": "uuid",
 					"kind": "storage",
+					"scope": "public",
+					"unique": true,
 					"autogenerate": true,
-					"primKey": "true",
-					"unique": "true"
+					"type": "uuid",
+					"primKey": true
 				},
 				{
-					"name": "frontPic",
+					"name": "frontWaist",
+					"kind": "storage",
 					"scope": "public",
-					"type": "image",
-					"kind": "storage"
+					"type": "number"
 				},
 				{
-					"name": "backPic",
+					"name": "backWaist",
+					"kind": "storage",
 					"scope": "public",
-					"type": "image",
-					"kind": "storage"
+					"type": "number"
 				},
 				{
-					"name": "sidePic",
+					"name": "sideWaist",
+					"kind": "storage",
 					"scope": "public",
-					"type": "image",
-					"kind": "storage"
+					"type": "number"
 				},
 				{
-					"name": "dateTaken",
+					"name": "waistCircumference",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "dateMeasured",
+					"kind": "storage",
 					"scope": "public",
 					"type": "date",
-					"kind": "storage"
+					"simpleDate": false
 				},
 				{
 					"name": "customer",
+					"kind": "relatedEntity",
 					"scope": "public",
-					"path": "Customer",
 					"type": "Customer",
-					"kind": "relatedEntity"
+					"path": "Customer"
+				}
+			]
+		},
+		{
+			"name": "CustomerPicture",
+			"className": "CustomerPicture",
+			"collectionName": "CustomerPictureCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autogenerate": true,
+					"type": "uuid",
+					"primKey": true
+				},
+				{
+					"name": "frontPic",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				},
+				{
+					"name": "backPic",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				},
+				{
+					"name": "sidePic",
+					"kind": "storage",
+					"scope": "public",
+					"type": "image"
+				},
+				{
+					"name": "dateTaken",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "customer",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Customer",
+					"path": "Customer"
 				}
 			]
 		}
-	],
-	"type": []
+	]
 }

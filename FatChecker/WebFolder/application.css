@@ -3,3 +3,8 @@
 	The CSS styles that are created when you create a Widget Skin are placed in this file too.
 */
 
+.warning {
+	color:red;
+	
+}
+
