@@ -3,6 +3,32 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#frame3 {
+	 width: 320px;
+	 height: 392px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	 border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	 border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	 border-bottom-right-radius: 0px;
+	-moz-border-radius-bottomright: 0px;
+	 border-top-style: none;
+	 border-top-width: 0px;
+	 border-left-style: none;
+	 border-left-width: 0px;
+	 border-right-style: none;
+	 border-right-width: 0px;
+	 border-bottom-style: none;
+	 border-bottom-width: 0px;
+	 
+}
+
 #body3 {
 	 top: 44px;
 	 bottom: 0px;
@@ -10,6 +36,10 @@
 	 right: 0px;
 	
 	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 border-bottom-width: 0px;
 	 
 }
 
