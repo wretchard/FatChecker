@@ -65,19 +65,19 @@
 					"primKey": true
 				},
 				{
-					"name": "FirstName",
+					"name": "firstName",
 					"kind": "storage",
 					"scope": "public",
 					"type": "string"
 				},
 				{
-					"name": "LastName",
+					"name": "surName",
 					"kind": "storage",
 					"scope": "public",
 					"type": "string"
 				},
 				{
-					"name": "MiddleName",
+					"name": "middleName",
 					"kind": "storage",
 					"scope": "public",
 					"type": "string"
@@ -97,6 +97,26 @@
 					"type": "CustomerPictureCollection",
 					"reversePath": true,
 					"path": "customer"
+				},
+				{
+					"name": "userName",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "password",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				}
+			],
+			"methods": [
+				{
+					"name": "registerCustomer",
+					"applyTo": "dataClass",
+					"scope": "public",
+					"from": "guidedModel.Customer.methods.registerCustomer"
 				}
 			]
 		},
@@ -204,5 +224,6 @@
 				}
 			]
 		}
-	]
+	],
+	"type": []
 }

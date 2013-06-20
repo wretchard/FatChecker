@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var login1 = {};	// @login
 	var button1 = {};	// @button
 	var buttonCustomer = {};	// @button
 	var button_upload = {};	// @button
@@ -10,11 +11,32 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	login1.logout = function login1_logout (event)// @startlock
+	{// @endlock
+		$$('navigationView1').goToView(3);
+	};// @lock
+
+	login1.login = function login1_login (event)// @startlock
+	{// @endlock
+		$$('navigationView1').goToView(1);
+	};// @lock
+
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
-		checkfields();
+		registerUser()
 		
 	};// @lock
+	
+	function registerUser() {
+		var comPlete = checkfields();
+		if (comPlete) {
+			var isLong = checklengths();
+			if (comPlete && isLong) {
+			$$('richTextWarning').setValue('')
+			ds.Customer.registerCustomer(objRegistration);
+		}
+		}		
+	}
 	
 	function checkfields() {
 		if (!$$('textField1').getValue()) {
@@ -32,9 +54,27 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$$('richTextWarning').setValue('User Name missing')
 		}
 		
+		else if (!$$('textField5').getValue()) {
+			$$('richTextWarning').setValue('Password missing')
+		}
+		
 		else {
 			$$('richTextWarning').setValue('')
+			return true;
 			}
+	}
+	
+	function checklengths() {
+		if($$('textField4').getValue().length < 8) {
+			$$('richTextWarning').setValue('User Name must be at least 8 characters');
+			}
+		else if($$('textField5').getValue().length < 8) {
+			$$('richTextWarning').setValue('Password must be at least 8 characters');
+			}		
+		else {
+			$$('richTextWarning').setValue('');
+			return true;
+		}
 	}
 
 	buttonCustomer.click = function buttonCustomer_click (event)// @startlock
@@ -53,6 +93,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("login1", "logout", login1.logout, "WAF");
+	WAF.addListener("login1", "login", login1.login, "WAF");
 	WAF.addListener("button1", "click", button1.click, "WAF");
 	WAF.addListener("buttonCustomer", "click", buttonCustomer.click, "WAF");
 	WAF.addListener("button_upload", "click", button_upload.click, "WAF");
