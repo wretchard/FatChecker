@@ -10,6 +10,8 @@
 	//if (fullPath) {alert(fullPath); }
 	//document.getElementById("frame1-frame").style.display = 'none';
 	parent.$$('container_upload').toggle();
+	
+	
 	}
 	</script>
     </head>
@@ -17,9 +19,12 @@
 	<form action="../doFat"
 	enctype="multipart/form-data" method="post" id="send-picture" onSubmit="processForm()">
 	<div>
-	<input type="file" name="datafile" size="40" ID="upload">
+	<input type="file" name="dataFile" size="40" ID="upload">
 	</div>
 	<div>
+	<input type="text" size="10" name="measureType" ID="measureId">	
+	<input type="text" size="10" name="userName" ID="userNamer"><br>
+	<input type="text" size="10" name="uniqueID" ID="Uuid">
 	<input type="submit" value="Save" class="buttonstandard">
 	</div>
 	</form>

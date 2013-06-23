@@ -2,8 +2,6 @@
 
 <user name="System" ID="DD2F0CD0652DD342AC700E936F6B9142" fullName="" password=""/>
 
-<user name="wretchardcat" ID="CF444FBF57F9BB49A5CA4F3619460EE1" fullName="Richard Fernandez" password="767ce2d0f6d6b50be71e22e87900f732"/>
-
 <group name="Admin" ID="01000000000000000000000000000000" fullName="Admin">
 
 	<include user="System" userID="DD2F0CD0652DD342AC700E936F6B9142"/>
@@ -13,8 +11,6 @@
 <group name="User" ID="7203CF31D2E2954C96FA0B94345E3CF2" fullName="User">
 
 	<include user="System" userID="DD2F0CD0652DD342AC700E936F6B9142"/>
-
-	<include user="wretchardcat" userID="CF444FBF57F9BB49A5CA4F3619460EE1"/>
 
 </group>
 </directory>

@@ -83,6 +83,20 @@
 					"type": "string"
 				},
 				{
+					"name": "userName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string",
+					"indexKind": "auto"
+				},
+				{
+					"name": "password",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"type": "string"
+				},
+				{
 					"name": "customerAnthroCollection",
 					"kind": "relatedEntities",
 					"scope": "public",
@@ -97,18 +111,6 @@
 					"type": "CustomerPictureCollection",
 					"reversePath": true,
 					"path": "customer"
-				},
-				{
-					"name": "userName",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage"
-				},
-				{
-					"name": "password",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage"
 				}
 			],
 			"methods": [
@@ -191,22 +193,29 @@
 					"primKey": true
 				},
 				{
-					"name": "frontPic",
+					"name": "custPic",
 					"kind": "storage",
 					"scope": "public",
 					"type": "image"
 				},
 				{
-					"name": "backPic",
+					"name": "picType",
 					"kind": "storage",
 					"scope": "public",
-					"type": "image"
+					"type": "string"
 				},
 				{
-					"name": "sidePic",
+					"name": "customer",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Customer",
+					"path": "Customer"
+				},
+				{
+					"name": "userName",
 					"kind": "storage",
 					"scope": "public",
-					"type": "image"
+					"type": "string"
 				},
 				{
 					"name": "dateTaken",
@@ -216,11 +225,11 @@
 					"simpleDate": false
 				},
 				{
-					"name": "customer",
-					"kind": "relatedEntity",
+					"name": "uuidvar",
 					"scope": "public",
-					"type": "Customer",
-					"path": "Customer"
+					"type": "string",
+					"kind": "storage",
+					"indexKind": "auto"
 				}
 			]
 		}
