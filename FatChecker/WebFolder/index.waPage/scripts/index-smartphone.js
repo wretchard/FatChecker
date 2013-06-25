@@ -2,6 +2,10 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var backButton1 = {};	// @button
+	var buttonOK = {};	// @button
+	var buttonClear = {};	// @button
+	var imagebody = {};	// @image
 	var selectType = {};	// @select
 	var documentEvent = {};	// @document
 	var login1 = {};	// @login
@@ -12,6 +16,66 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	backButton1.click = function backButton1_click (event)// @startlock
+	{// @endlock
+
+	};// @lock
+
+	buttonOK.click = function buttonOK_click (event)// @startlock
+	{// @endlock
+		computeDistance();
+		//$$('containerdialog').hide();
+	};// @lock
+
+	buttonClear.click = function buttonClear_click (event)// @startlock
+	{// @endlock
+		$$('richTextLeft').setValue('')
+		$$('richTextRight').setValue('')
+		$$('containerdialog').hide();
+	};// @lock
+
+	imagebody.click = function imagebody_click (event)// @startlock
+	{// @endlock
+		mousePosition(event);
+
+
+	};// @lock
+	
+function computeDistance() {
+	
+	varPoints = $$('richTextLeft').getValue() + "," + $$('richTextRight').getValue()
+	varArray= varPoints.split(',')
+	deltaX=Math.pow((varArray[2]-varArray[0]), 2);
+	deltaY=Math.pow((varArray[3]-varArray[3]), 2);
+	hyp=deltaX + deltaY;
+	dist = Math.pow(hyp, .5)
+	$$('richTextValue').setValue(dist)
+	
+}
+	
+function showContainer() {
+		if ($('#containerdialog').is(':hidden')) {
+			$$('containerdialog').show();
+		}
+}
+	
+function mousePosition(event) {
+	
+	
+	if ($$('richTextLeft').getValue()==='') {
+		left=event.screenX + ',' + event.screenY;
+		$$('richTextLeft').setValue(left);	
+	}
+	else if ($$('richTextRight').getValue()==='') {
+			right=event.screenX + ',' + event.screenY;
+			$$('richTextRight').setValue(right);
+			showContainer()		
+	}
+	
+	//return({x:event.screenX, y:event.screenY })
+}
+	
 
 function createUUID() {
     // http://www.ietf.org/rfc/rfc4122.txt
@@ -41,7 +105,6 @@ function createUUID() {
 	{// @endlock
 
 		if (WAF.directory.currentUser()) {
-			//alert(WAF.directory.currentUser().userName);
 			$$('navigationView1').goToView(1);
 		}
 		else {
@@ -122,7 +185,13 @@ function createUUID() {
 
 	buttonCustomer.click = function buttonCustomer_click (event)// @startlock
 	{// @endlock
-		$$('navigationView1').goToView(2);
+		//$$('navigationView1').goToView(2);
+		if (WAF.directory.currentUser()) {
+			$$('navigationView1').goToView(1);
+		}
+		else {
+			$$('navigationView1').goToView(2);
+		}		
 	};// @lock
 
 	button_upload.click = function button_upload_click (event)// @startlock
@@ -137,6 +206,10 @@ function createUUID() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("backButton1", "click", backButton1.click, "WAF");
+	WAF.addListener("buttonOK", "click", buttonOK.click, "WAF");
+	WAF.addListener("buttonClear", "click", buttonClear.click, "WAF");
+	WAF.addListener("imagebody", "click", imagebody.click, "WAF");
 	WAF.addListener("selectType", "change", selectType.change, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("login1", "logout", login1.logout, "WAF");

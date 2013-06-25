@@ -8,12 +8,17 @@
 		<meta name="wakanda-build" content="4.129628"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0"/>
 		<meta name="WAF.config.loadCSS" id="waf-palette" content="/walib/WAF/widget/palette/css/widget-palette-cupertino.css"/>
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="arrMeasure" data-lib="WAF" data-id="arrMeasure" data-dataType="string" data-autoLoad="true" data-attributes="X:number,Y:number,seq:string" content="arrMeasure"/>
 		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="CustomerPicture" data-lib="WAF" data-id="customerPicture" data-dataType="string" data-autoLoad="false" content="customerPicture"/>
 		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="object" data-source="objRegistration" data-lib="WAF" data-id="objRegistration" data-dataType="string" data-autoLoad="true" data-attributes="firstName:string,middleName:string,surName:string,userName:string,password:string" content="objRegistration"/>
 		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/index-smartphone.css"/>
 		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
 
 <meta name="WAF.config.loadJS" id="waf-script" content="scripts/index-smartphone.js"/>
+
+
+
+
 
 
 
@@ -48,8 +53,17 @@
  	 	 	 			
  	 	 	 				<div id="richTextValue" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  "></div>
  	 	 	 		<button id="button_upload" data-type="button" data-text="Upload" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-action="simple" class="waf-widget waf-button cupertino inherited  "></button>
- 	 	 	 		<button id="button_show" data-type="button" data-text="Compute" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-action="simple" class="waf-widget waf-button cupertino inherited  "></button>
- 	 	 	 					<div id="richTextUUID" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  " data-hideonload="true"></div>
+ 	 	 	 		<button id="button_show" data-type="button" data-text="Show Pic" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-action="simple" class="waf-widget waf-button cupertino inherited  "></button>
+ 	 	 	 					<div id="richTextUUID" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-hideonload="true" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  "></div>
+ 	 	 	 		<div id="containerdialog" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-hideonload="true" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container cupertino inherited  waf-container-level-3 waf-level-3 ">
+	 	 	 	 	 	<div id="richTextTitle" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  ">Click left then right</div>
+ 	 	 	 	 		<div id="richTextLabel2" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="true" class="waf-widget waf-richText cupertino inherited  ">Right</div>
+ 	 	 	 	 		<button id="buttonOK" data-type="button" data-text="OK" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-action="simple" class="waf-widget waf-button cupertino inherited  "></button>
+ 	 	 	 	 		<button id="buttonClear" data-type="button" data-text="Clear" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-action="simple" class="waf-widget waf-button cupertino inherited  "></button>
+ 	 	 	 	 		<div id="richTextLeft" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  "></div>
+ 	 	 	 	 		<div id="richTextRight" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText cupertino inherited  "></div>
+ 	 	 	 	 		<div id="richTextLabel" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="true" class="waf-widget waf-richText cupertino inherited  ">Left</div>
+ 	 	 	 	 	</div>
  	 	 	 	</div>
  	 	 	</div>
  	 		<div id="view2" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-context="['protected','allowDrop']" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-container cupertino inherited  waf-navigationView-view waf-navigation-view2  waf-container-level-1 waf-level-1">

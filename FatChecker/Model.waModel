@@ -41,6 +41,17 @@
 						"Y": 318
 					}
 				}
+			},
+			"CameraData": {
+				"panelColor": "#B2A2C7",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 351,
+						"Y": 390
+					},
+					"pathVisible": true
+				}
 			}
 		},
 		"model": {
@@ -226,10 +237,58 @@
 				},
 				{
 					"name": "uuidvar",
+					"kind": "storage",
 					"scope": "public",
 					"type": "string",
-					"kind": "storage",
 					"indexKind": "auto"
+				},
+				{
+					"name": "cameraType",
+					"scope": "public",
+					"path": "CameraData",
+					"type": "CameraData",
+					"kind": "relatedEntity"
+				}
+			]
+		},
+		{
+			"collectionName": "CameraDataCollection",
+			"className": "CameraData",
+			"attributes": [
+				{
+					"name": "ID",
+					"scope": "public",
+					"type": "uuid",
+					"kind": "storage",
+					"autogenerate": true,
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "customerPictureCollection",
+					"scope": "public",
+					"reversePath": true,
+					"path": "cameraType",
+					"type": "CustomerPictureCollection",
+					"kind": "relatedEntities"
+				},
+				{
+					"name": "cameraName",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "fieldOfView",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
+				},
+				{
+					"name": "cmToPixels",
+					"scope": "public",
+					"type": "number",
+					"kind": "storage"
 				}
 			]
 		}
