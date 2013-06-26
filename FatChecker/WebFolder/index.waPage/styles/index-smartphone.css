@@ -86,21 +86,11 @@
 #label6 {
 	 width: 75px;
 	 height: 15px;
-	 top: 241.5px;
+	 top: 239.5px;
 	 left: 14px;
 	
 	 position: absolute;
 	 min-width: 75px;
-	 
-}
-
-#button1 {
-	 width: 92px;
-	 height: 29px;
-	 top: 279px;
-	 left: 93px;
-	
-	 position: absolute;
 	 
 }
 
@@ -177,8 +167,8 @@
 }
 
 #container1 {
-	 width: 318px;
-	 height: 315px;
+	 width: 324px;
+	 height: 371px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -335,23 +325,12 @@
 	 
 }
 
-#button_upload {
-	 z-index: 2;
-	 width: 92px;
-	 height: 29px;
-	 top: 359px;
-	 left: 2px;
-	
-	 position: absolute;
-	 
-}
-
 #button_show {
 	 z-index: 2;
 	 width: 90px;
 	 height: 29px;
 	 top: 359px;
-	 left: 104px;
+	 left: 6px;
 	
 	 position: absolute;
 	 
@@ -375,7 +354,7 @@
 
 #richTextValue {
 	 z-index: 2;
-	 width: 150px;
+	 width: 130px;
 	 height: 24px;
 	 top: 243px;
 	 left: 152px;
@@ -456,7 +435,7 @@
 #textField5 {
 	 width: 180px;
 	 height: 40px;
-	 top: 229px;
+	 top: 227px;
 	 left: 94px;
 	
 	 position: absolute;
@@ -625,6 +604,61 @@
 	 height: 29px;
 	 top: 82px;
 	 left: 77px;
+	
+	 position: absolute;
+	 
+}
+
+#buttonCompute {
+	 z-index: 2;
+	 width: 90px;
+	 height: 29px;
+	 top: 359px;
+	 left: 108px;
+	
+	 position: absolute;
+	 
+}
+
+#selectPhone {
+	 width: 180px;
+	 height: 24px;
+	 top: 280px;
+	 left: 94px;
+	
+	 position: absolute;
+	 
+}
+
+#richTexttype {
+	 width: 70px;
+	 height: 15px;
+	 top: 284px;
+	 left: 14px;
+	
+	 position: absolute;
+	 border-top-width: 0px;
+	 border-left-width: 0px;
+	 border-right-width: 0px;
+	 border-bottom-width: 0px;
+	 
+}
+
+#buttonSignUp {
+	 width: 92px;
+	 height: 29px;
+	 top: 309px;
+	 left: 94px;
+	
+	 position: absolute;
+	 
+}
+
+#richTextunits {
+	 width: 22px;
+	 height: 15px;
+	 top: 246px;
+	 left: 284px;
 	
 	 position: absolute;
 	 

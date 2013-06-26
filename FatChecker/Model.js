@@ -1,15 +1,33 @@
 ﻿
 guidedModel =// @startlock
 {
+	CameraData :
+	{
+		pixelsToMM :
+		{
+			onGet:function()
+			{// @endlock
+				return ((this.pixelsHighImage/this.screenHigh) * this.mmAtMeter)/1000
+			}// @startlock
+		},
+		mmAtMeter :
+		{
+			onGet:function()
+			{// @endlock
+				return this.fieldOfView*17.45;
+			}// @startlock
+		}
+	},
 	Customer :
 	{
 		methods :
 		{// @endlock
 			registerCustomer:function(objReg)
 			{// @lock
-				//debugger;
+				debugger;
 				var varName;
 				TheCustomer = ds.Customer.find('userName=:1', objReg.userName)
+				TheCamera=ds.CameraData.find('ID=:1', objReg.cameraTypeId);
 				if (TheCustomer == null) {
 					TheCustomer = ds.Customer.createEntity();
 				}
@@ -18,6 +36,7 @@ guidedModel =// @startlock
 					TheCustomer.surName=objReg.surName;
 					TheCustomer.userName=objReg.userName;
 					TheCustomer.password=objReg.password;
+					TheCustomer.cameraType=TheCamera;
 					varName = objReg.firstName + ' ' + objReg.surName
 					TheCustomer.save();
 					

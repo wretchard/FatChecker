@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var buttonCompute = {};	// @button
 	var backButton1 = {};	// @button
 	var buttonOK = {};	// @button
 	var buttonClear = {};	// @button
@@ -9,13 +10,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var selectType = {};	// @select
 	var documentEvent = {};	// @document
 	var login1 = {};	// @login
-	var button1 = {};	// @button
+	var buttonSignUp = {};	// @button
 	var buttonCustomer = {};	// @button
-	var button_upload = {};	// @button
 	var button_show = {};	// @button
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	buttonCompute.click = function buttonCompute_click (event)// @startlock
+	{// @endlock
+		/*vuuid=$$('richTextUUID').getValue();
+		sources.customerPicture.query("uuidvar=:1", vuuid)*/
+	};// @lock
 
 	backButton1.click = function backButton1_click (event)// @startlock
 	{// @endlock
@@ -32,6 +38,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		$$('richTextLeft').setValue('')
 		$$('richTextRight').setValue('')
+		$$('richTextValue').setValue('')
 		$$('containerdialog').hide();
 	};// @lock
 
@@ -43,14 +50,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 	
 function computeDistance() {
-	
+	//debugger;
 	varPoints = $$('richTextLeft').getValue() + "," + $$('richTextRight').getValue()
 	varArray= varPoints.split(',')
 	deltaX=Math.pow((varArray[2]-varArray[0]), 2);
-	deltaY=Math.pow((varArray[3]-varArray[3]), 2);
+	deltaY=Math.pow((varArray[3]-varArray[1]), 2);
 	hyp=deltaX + deltaY;
 	dist = Math.pow(hyp, .5)
+	facTor=source.customerPicture.picFileHeight/source.customerPicture.screenHigh;
+	dist=dist*facTor;	
 	$$('richTextValue').setValue(dist)
+	
+}
+
+function saveAnthro() {
 	
 }
 	
@@ -99,6 +112,7 @@ function createUUID() {
 		varUuid =createUUID();
 		document.getElementById('frame1-frame').contentDocument.getElementById('Uuid').value=varUuid;
 		$$('richTextUUID').setValue(varUuid)
+		$$('container_upload').toggle();
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
@@ -123,7 +137,7 @@ function createUUID() {
 		$$('navigationView1').goToView(1);
 	};// @lock
 
-	button1.click = function button1_click (event)// @startlock
+	buttonSignUp.click = function buttonSignUp_click (event)// @startlock
 	{// @endlock
 		registerUser();
 	};// @lock
@@ -134,7 +148,7 @@ function createUUID() {
 			var isLong = checklengths();
 			if (comPlete && isLong) {
 			$$('richTextWarning').setValue('')
-			ds.Customer.registerCustomer(objRegistration, {onSuccess: function(event) {
+			waf.ds.Customer.registerCustomer(objReg, {onSuccess: function(event) {
 				//$$('navigationView1').goToView(1)
 				$$('richTextWarning').setValue('You may now login')
 				}
@@ -194,11 +208,6 @@ function createUUID() {
 		}		
 	};// @lock
 
-	button_upload.click = function button_upload_click (event)// @startlock
-	{// @endlock
-		$$('container_upload').toggle();
-	};// @lock
-
 	button_show.click = function button_show_click (event)// @startlock
 	{// @endlock
 		vuuid=$$('richTextUUID').getValue();
@@ -206,6 +215,7 @@ function createUUID() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("buttonCompute", "click", buttonCompute.click, "WAF");
 	WAF.addListener("backButton1", "click", backButton1.click, "WAF");
 	WAF.addListener("buttonOK", "click", buttonOK.click, "WAF");
 	WAF.addListener("buttonClear", "click", buttonClear.click, "WAF");
@@ -214,9 +224,8 @@ function createUUID() {
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("login1", "logout", login1.logout, "WAF");
 	WAF.addListener("login1", "login", login1.login, "WAF");
-	WAF.addListener("button1", "click", button1.click, "WAF");
+	WAF.addListener("buttonSignUp", "click", buttonSignUp.click, "WAF");
 	WAF.addListener("buttonCustomer", "click", buttonCustomer.click, "WAF");
-	WAF.addListener("button_upload", "click", button_upload.click, "WAF");
 	WAF.addListener("button_show", "click", button_show.click, "WAF");
 // @endregion
 };// @endlock
