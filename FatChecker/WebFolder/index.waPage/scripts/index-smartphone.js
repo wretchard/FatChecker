@@ -2,7 +2,6 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
-	var buttonCompute = {};	// @button
 	var backButton1 = {};	// @button
 	var buttonOK = {};	// @button
 	var buttonClear = {};	// @button
@@ -17,12 +16,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
-	buttonCompute.click = function buttonCompute_click (event)// @startlock
-	{// @endlock
-		/*vuuid=$$('richTextUUID').getValue();
-		sources.customerPicture.query("uuidvar=:1", vuuid)*/
-	};// @lock
-
 	backButton1.click = function backButton1_click (event)// @startlock
 	{// @endlock
 
@@ -30,9 +23,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	buttonOK.click = function buttonOK_click (event)// @startlock
 	{// @endlock
-		computeDistance();
-		//$$('containerdialog').hide();
+
+	var custID=source.customerPicture.customerID;
+	var measurement=$$('richTextValue').getValue()
+	var measuretype=$$('selectType').getValue();
+	waf.ds.CustomerAnthro.addNew(custID, measurement, measuretype, {onSuccess: function(event) {
+				alert(event.result);
+				}})
+	
+	$$('containerdialog').hide();
+		
 	};// @lock
+	
+
 
 	buttonClear.click = function buttonClear_click (event)// @startlock
 	{// @endlock
@@ -45,7 +48,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	imagebody.click = function imagebody_click (event)// @startlock
 	{// @endlock
 		mousePosition(event);
-
 
 	};// @lock
 	
@@ -83,7 +85,8 @@ function mousePosition(event) {
 	else if ($$('richTextRight').getValue()==='') {
 			right=event.screenX + ',' + event.screenY;
 			$$('richTextRight').setValue(right);
-			showContainer()		
+			showContainer()
+			computeDistance();		
 	}
 	
 	//return({x:event.screenX, y:event.screenY })
@@ -149,7 +152,6 @@ function createUUID() {
 			if (comPlete && isLong) {
 			$$('richTextWarning').setValue('')
 			waf.ds.Customer.registerCustomer(objReg, {onSuccess: function(event) {
-				//$$('navigationView1').goToView(1)
 				$$('richTextWarning').setValue('You may now login')
 				}
 			
@@ -215,7 +217,6 @@ function createUUID() {
 	};// @lock
 
 // @region eventManager// @startlock
-	WAF.addListener("buttonCompute", "click", buttonCompute.click, "WAF");
 	WAF.addListener("backButton1", "click", backButton1.click, "WAF");
 	WAF.addListener("buttonOK", "click", buttonOK.click, "WAF");
 	WAF.addListener("buttonClear", "click", buttonClear.click, "WAF");

@@ -1,1 +1,1 @@
-﻿Date()
+﻿TheCustomerAnthro = ds.CustomerAnthro.find('frontWaist!==:1',  null)

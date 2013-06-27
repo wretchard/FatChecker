@@ -106,11 +106,19 @@
 
 	<attributes name="sideWaist" kind="storage" scope="public" type="number"/>
 
-	<attributes name="waistCircumference" kind="storage" scope="public" type="number"/>
+	<attributes name="waistCircumference" kind="calculated" scope="public" type="number" scriptKind="javascript">
+
+		<onGet from="guidedModel.CustomerAnthro.waistCircumference.onGet"/>
+
+	</attributes>
 
 	<attributes name="dateMeasured" kind="storage" scope="public" type="date" simpleDate="true"/>
 
 	<attributes name="customer" kind="relatedEntity" scope="public" type="Customer" path="Customer"/>
+
+	<attributes name="customerID" kind="alias" scope="public" type="uuid" path="customer.ID"/>
+
+	<methods name="addNew" applyTo="dataClass" scope="public" from="guidedModel.CustomerAnthro.methods.addNew"/>
 
 </dataClasses>
 
@@ -126,11 +134,7 @@
 
 	<attributes name="userName" kind="storage" scope="public" type="string"/>
 
-	<attributes name="dateTaken" kind="storage" scope="public" type="date" simpleDate="true">
-
-		<defaultFormat presentation="text" locale="au"/>
-
-	</attributes>
+	<attributes name="dateTaken" kind="storage" scope="public" type="date" simpleDate="true"/>
 
 	<attributes name="uuidvar" kind="storage" scope="public" type="string" indexKind="auto"/>
 
@@ -141,6 +145,10 @@
 	<attributes name="screenHigh" kind="alias" scope="public" type="number" path="customer.cameraType.screenHigh"/>
 
 	<attributes name="mmAtMeter" kind="alias" scope="public" type="number" path="customer.cameraType.mmAtMeter"/>
+
+	<attributes name="customerID" kind="alias" scope="public" type="uuid" path="customer.ID"/>
+
+	<methods name="checkData" applyTo="dataClass" scope="publicOnServer" from="guidedModel.CustomerPicture.methods.checkData"/>
 
 </dataClasses>
 </EntityModelCatalog>
